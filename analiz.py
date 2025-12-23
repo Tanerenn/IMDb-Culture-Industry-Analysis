@@ -3,18 +3,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import re
 
-# --- AYARLAR ---
 sns.set_style("whitegrid")
-plt.rcParams.update({'font.size': 12}) # Yazıları biraz büyütelim okunur olsun
+plt.rcParams.update({'font.size': 12}) 
 
-# --- VERİ YÜKLEME ---
+
 try:
     df = pd.read_csv('IMDB Top 250 Movies.csv')
 except:
     print("Hata: Dosya bulunamadı.")
     exit()
 
-# --- TEMİZLİK ---
+
 def clean_runtime(row):
     try:
         if isinstance(row, str):
@@ -41,17 +40,17 @@ df['genre_list'] = df['genre'].apply(lambda x: [g.strip() for g in x.split(',')]
 df_exploded = df.explode('genre_list')
 df_exploded['era'] = df_exploded['year'].apply(lambda x: '2000 Öncesi' if x < 2000 else '2000 Sonrası')
 
-# --- GRAFİK 1: SÜRELER (STANDARTLAŞMA) ---
+
 plt.figure(figsize=(10, 6))
 sns.regplot(x='year', y='runtime_minutes', data=df, scatter_kws={'alpha':0.5}, line_kws={'color':'red'})
 plt.title('Yıllara Göre Film Süreleri ve Standartlaşma Trendi')
 plt.xlabel('Yıl')
 plt.ylabel('Süre (Dakika)')
 plt.tight_layout()
-plt.savefig('slide1_sure.png', dpi=300) # Yüksek kalite kaydet
+plt.savefig('slide1_sure.png', dpi=300) 
 print("1. Grafik hazır: slide1_sure.png")
 
-# --- GRAFİK 2: TÜR DEĞİŞİMİ (KÜLTÜR ENDÜSTRİSİ) ---
+
 plt.figure(figsize=(10, 6))
 top_genres = df_exploded['genre_list'].value_counts().head(6).index
 df_top_genres = df_exploded[df_exploded['genre_list'].isin(top_genres)]
@@ -64,7 +63,6 @@ plt.tight_layout()
 plt.savefig('slide2_tur.png', dpi=300)
 print("2. Grafik hazır: slide2_tur.png")
 
-# --- GRAFİK 3: GİŞE vs PUAN (META İLİŞKİSİ) ---
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x='box_office_num', y='rating', data=df, alpha=0.7, s=100, color='purple')
 plt.xscale('log')
