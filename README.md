@@ -1,38 +1,50 @@
-Projenin Amacı
-Theodor Adorno'nun **"Kültür Endüstrisi"** teorisine göre; modern sanat artık ticari bir meta haline gelmiş ve fabrikasyon bir üretime dönüşmüştür. 
+# 🎬 IMDb Top 250 & Culture Industry Analysis
 
-Bu projede, **IMDb Top 250** veri setini kullanarak sinemanın yıllar içindeki değişimini analiz ettik ve şu sorulara cevap aradık:
-- Filmler standartlaşıyor mu?
-- Sanatsal türler (Drama) yerini tüketim türlerine (Aksiyon) mi bırakıyor?
-- Nitelik (Puan) mi önemli yoksa Popülarite (Gişe) mi?
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-TEAL?style=for-the-badge&logo=python&logoColor=white)
 
----
+> **"The culture industry has transformed art into a commercial commodity and converted it into a standardized factory product."** — Theodor Adorno
 
-## 📊 Bulgular ve Grafikler
+## 📌 Project Purpose
 
-### 1. Film Sürelerinin Standartlaşması
-Veriyi incelediğimizde, film sürelerinin belirli bir ticari kalıba (standart pakete) oturduğunu görüyoruz. Endüstri, risk almamak için "tüketilmesi en kolay" süreleri tercih ediyor.
-![Süre Analizi](slide1_sure.png)
+This project analyzes the transformation of cinema over the years through a data science perspective, based on Theodor Adorno's theory of the **"Culture Industry."** Using the **IMDb Top 250** dataset, we sought answers to the following fundamental questions:
 
----
-
-### 2. Türlerin Değişimi: Sanattan Eğlenceye
-Projenin en çarpıcı bulgusu budur. 2000 öncesi (Yeşil) **Drama** ağırlıktayken, 2000 sonrasında (Turuncu) **Aksiyon ve Macera** patlama yapmıştır. Sinema, düşünen bireyden çok eğlenen tüketiciye hitap etmeye başlamıştır.
-
-![Tür Analizi](slide2_tur.png)
+* Are movies becoming standardized in terms of duration and content?
+* Are artistic genres (Drama) being replaced by consumption-oriented genres (Action)?
+* Is the criterion for success quality (Rating) or popularity (Box Office)?
 
 ---
 
-### 3. Gişe ve Puan İlişkisi (Sanat vs Meta)
-Grafikte görüldüğü üzere, en çok hasılat yapan (sağ taraf) filmler her zaman en yüksek puanı alan (üst taraf) filmler değildir. Kültür endüstrisinde başarı, pazarlama bütçesiyle ölçülür.
+## 📊 Findings & Visualizations
 
-![Gişe Analizi](slide3_gise.png)
+### 1. Standardization of Runtime
+Upon examining the data, we observe that movie runtimes have settled into a specific commercial pattern (a "standard package"). The industry tends to prefer durations that are "easiest to consume" for the audience to avoid financial risk.
+
+![Runtime Analysis](slide1_sure.png)
+
+### 2. The Shift in Genres: From Art to Entertainment
+The most striking finding of the project is the divergence between genres.
+* **Pre-2000:** Drama and artistic narrative were dominant.
+* **Post-2000:** There has been an explosion in Action and Adventure genres.
+
+This confirms that cinema has begun to appeal more to the "entertained consumer" rather than the "thinking individual."
+
+![Genre Analysis](slide2_tur.png)
+
+### 3. Box Office vs. Rating (Art vs. Commodity)
+According to the correlation analysis, the highest-grossing films are not always those with the highest artistic ratings. In the culture industry, "success" is measured by marketing budgets and box office figures rather than artistic depth.
+
+![Box Office Analysis](slide3_gise.png)
 
 ---
 
-## 💻 Kullanılan Teknolojiler
-Bu analiz **Python** programlama dili kullanılarak yapılmıştır.
-- **Pandas:** Veri temizleme ve manipülasyon.
-- **Seaborn / Matplotlib:** Veri görselleştirme.
+## 💻 Technologies Used
 
-*Kodlara `analiz.py` dosyasından ulaşabilirsiniz.*
+This analysis was conducted using the **Python** programming language and the following libraries:
+
+* **Pandas:** Data cleaning, manipulation, and filtering.
+* **Seaborn / Matplotlib:** Data visualization and chart generation.
+
+### Execution
+You can access the source code and detailed analysis in the `analiz.py` file within the repository.
